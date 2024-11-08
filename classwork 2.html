@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classwork</title>
+    <script>
+        let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        
+        let sum = 0;
+        for (let i = 0; i < a.length; i++) {
+            sum += a[i];
+        }
+        let average = sum / a.length;
+    </script>
+    <script>   
+        function factorial(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            }
+            return n * factorial(n - 1);
+        }
+
+        let lastTwoDigits = 32;
+        let result = factorial(lastTwoDigits);
+    </script>
+    <script>
+        function factorial(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            }
+            return n * factorial(n - 1);
+        }
+
+        // Function to compare and calculate factorialss
+        function compareFactorials() {
+            // Get input values
+            let x = parseInt(document.getElementById("inputX").value);
+            let y = parseInt(document.getElementById("inputY").value);
+
+            // Calculate factorials
+            let factorialX = factorial(x);
+            let factorialY = factorial(y);
+
+            // Determine which factorial to display
+            let result;
+            if (x > y) {
+                result = "Factorial of " + x + " is: " + factorialX;
+            } else if (y > x) {
+                result = "Factorial of " + y + " is: " + factorialY;
+            } else {
+                result = "Both numbers are equal. Factorial is: " + factorialX;
+            }
+
+            // Display the result
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+    <script>
+        // Display the results on the webpage
+        function displayResults() {
+            document.getElementById("average").innerText = "The average is: " + average;
+            document.getElementById("factorial").innerText = "The factorial of " + lastTwoDigits + " is: " + result;
+        }
+
+        // Call the display function when the window loads
+        window.onload = displayResults;
+    </script>
+</head>
+<body>
+    <p>Ogunwale Olaoluwasubomi David</p>
+    <p>21CJ029232</p>
+    <p>Computer Engineering</p>
+    <p id="average"></p>
+    <p id="factorial"></p>
+
+    <h1>Factorial Comparison</h1>
+    <label for="inputX">Enter first number (x):</label>
+    <input type="number" id="inputX" name="inputX"><br><br>
+    <label for="inputY">Enter second number (y):</label>
+    <input type="number" id="inputY" name="inputY"><br><br>
+    <button onclick="compareFactorials()">Calculate Factorial</button>
+    <p id="result"></p>
+</body>
+</html>
